@@ -17,8 +17,9 @@ describe Claim do
 
   let(:rules) { double(:allow? => true) }
   
+  before { claim.() }
+  
   it "checks rules" do
-    claim.()
     expect(rules).to have_received(:allow?)
   end
 
