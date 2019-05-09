@@ -4,8 +4,10 @@ end
 describe Claim do
 
   subject { Claim.new }
-  
-  it "checks rules"
+
+  it "checks rules" do
+  end
+
   it "update board"
   it "succeeds"
 
