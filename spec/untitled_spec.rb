@@ -30,11 +30,8 @@ describe Claim do
     expect(commit).to have_received(:call)
   end
 
-  it "succeeds"
-
   context "against the rules" do
     it "doesn't update the board"
-    it "fails"
   end
   
 
