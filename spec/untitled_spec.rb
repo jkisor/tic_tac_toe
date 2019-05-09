@@ -1,21 +1,24 @@
 class Claim
 
-  def initialize(rules)
-    @rules = rules
+  def initialize(rules, commit)
+    @rules  = rules
+    @commit = commit
   end
 
 
   def call
     @rules.allow?
+    @commit.()
   end
 
 end
 
 describe Claim do
 
-  subject(:claim) { Claim.new(rules) }
+  subject(:claim) { Claim.new(rules, commit) }
 
-  let(:rules) { double(:allow? => true) }
+  let(:rules)  { double(:allow? => true) }
+  let(:commit) { double(:call => nil) }
   
   before { claim.() }
   
@@ -23,7 +26,10 @@ describe Claim do
     expect(rules).to have_received(:allow?)
   end
 
-  it "update board"
+  it "commits the claim" do
+    expect(commit).to have_received(:call)
+  end
+
   it "succeeds"
 
   context "against the rules" do
