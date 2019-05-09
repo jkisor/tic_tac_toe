@@ -7,8 +7,8 @@ class Claim
 
 
   def call
-    @rules.allow?
-    @commit.()
+    @commit.() if @rules.allow?
+    
   end
 
 end
@@ -31,7 +31,12 @@ describe Claim do
   end
 
   context "against the rules" do
-    it "doesn't commits the claim"
+  let(:rules)  { double(:allow? => false) }
+
+    it "doesn't commits the claim" do
+      expect(commit).not_to have_received(:call)
+    end
+
   end
   
 
