@@ -31,7 +31,7 @@ describe Claim do
   end
 
   context "against the rules" do
-    it "doesn't update the board"
+    it "doesn't commits the claim"
   end
   
 
