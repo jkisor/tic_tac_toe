@@ -6,6 +6,7 @@ describe Claim do
   subject { Claim.new }
 
   it "checks rules" do
+    
   end
 
   it "update board"
