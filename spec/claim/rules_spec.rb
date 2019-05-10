@@ -37,7 +37,7 @@ describe Claim::Rules do
 
   context "space doesn't exist" do
     let(:board) { "X--------"}
-    let(:space) { 123 }
+    let(:space) { 666 }
 
     it "isn't allowed" do
       expect(@results).to eq(false)
