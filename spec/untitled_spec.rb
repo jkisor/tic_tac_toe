@@ -21,7 +21,6 @@ describe Claim do
   let(:commit) { double(:call => nil) }
 
   let(:board) { double }
-
   let(:space) { double } # id?
   
   before { claim.(board, space) }
