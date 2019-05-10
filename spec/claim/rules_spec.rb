@@ -2,6 +2,7 @@ class Claim
   class Rules
     
     def allow?(board, space)
+      true
     end
 
   end
@@ -9,11 +10,11 @@ class Claim
 end
 
 describe Claim::Rules do
-  let(:board) { double }
-  let(:space) { double }
+  let(:empty_board) { "---------" }
+  let(:space) { 0 }
 
-  it do
-    subject.allow?(board, space)
+  it "is allowed" do
+    subject.allow?(empty_board, space)  
   end
 
 end
