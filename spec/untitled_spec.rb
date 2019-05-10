@@ -6,8 +6,8 @@ class Claim
   end
 
 
-  def call(board)
-    @commit.(board) if @rules.allow?
+  def call(board, space)
+    @commit.(board, space) if @rules.allow?
     
   end
 
@@ -21,15 +21,17 @@ describe Claim do
   let(:commit) { double(:call => nil) }
 
   let(:board) { double }
+
+  let(:space) { double } # id?
   
-  before { claim.(board) }
+  before { claim.(board, space) }
   
   it "checks rules" do
     expect(rules).to have_received(:allow?)
   end
 
   it "commits the move" do
-    expect(commit).to have_received(:call).with(board)
+    expect(commit).to have_received(:call).with(board, space)
   end
 
   context "against the rules" do
