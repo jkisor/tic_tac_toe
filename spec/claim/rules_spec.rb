@@ -15,10 +15,14 @@ describe Claim::Rules do
 
   context "space is empty" do
     
+    let(:board) { "-" * 9 }
+
     it "is allowed" do
       expect(subject.allow?(empty_board, space)).to eq(true)
     end
 
   end
 
+
+  
 end
