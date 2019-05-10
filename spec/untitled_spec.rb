@@ -7,7 +7,12 @@ class Claim
 
 
   def call(board, space)
-    @commit.(board, space) if @rules.allow?
+    
+    if @rules.allow?
+      @commit.(board, space) 
+    else
+      board
+    end
     
   end
 
@@ -18,10 +23,12 @@ describe Claim do
   subject(:claim) { Claim.new(rules, commit) }
 
   let(:rules)  { double(:allow? => true) }
-  let(:commit) { double(:call => nil) }
+  let(:commit) { double(:call => updated_board) }
 
   let(:board) { double }
   let(:space) { double } # id?
+
+  let(:updated_board) { double }
   
   before { claim.(board, space) }
   
