@@ -12,13 +12,15 @@ end
 
 describe Claim::Rules do
 
+  before { @results = subject.allow?(board, space) }
+
   context "space is empty" do
     
     let(:board) { "-" * 9 }
     let(:space) { 0 }
 
     it "is allowed" do
-      expect(subject.allow?(board, space)).to eq(true)
+      expect(@results).to eq(true)
     end
 
   end
@@ -28,7 +30,7 @@ describe Claim::Rules do
     let(:space) { 0 }
 
     it "isn't allowed" do
-      expect(subject.allow?(board, space)).to eq(false)
+      expect(@results).to eq(false)
     end
 
   end
