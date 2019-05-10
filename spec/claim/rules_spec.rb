@@ -1,8 +1,9 @@
 class Claim
   class Rules
-    
+    EMPTY_SPACE = "-"
+
     def allow?(board, space)
-      true
+      board.chars[space] == EMPTY_SPACE
     end
 
   end
@@ -10,19 +11,26 @@ class Claim
 end
 
 describe Claim::Rules do
-  let(:empty_board) { "---------" }
-  let(:space) { 0 }
 
   context "space is empty" do
     
     let(:board) { "-" * 9 }
+    let(:space) { 0 }
 
     it "is allowed" do
-      expect(subject.allow?(empty_board, space)).to eq(true)
+      expect(subject.allow?(board, space)).to eq(true)
     end
 
   end
 
+  context "space already claimed" do
+    let(:board) { "X--------"}
+    let(:space) { 0 }
 
-  
+    it "isn't allowed" do
+      expect(subject.allow?(board, space)).to eq(false)
+    end
+
+  end
+
 end
