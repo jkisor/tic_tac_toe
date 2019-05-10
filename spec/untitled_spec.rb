@@ -30,7 +30,7 @@ describe Claim do
 
   let(:updated_board) { double }
   
-  before { claim.(board, space) }
+  before { @results = claim.(board, space) }
   
   it "checks rules" do
     expect(rules).to have_received(:allow?)
@@ -38,6 +38,10 @@ describe Claim do
 
   it "commits the move" do
     expect(commit).to have_received(:call).with(board, space)
+  end
+
+  it "returns updated board" do
+    expect(@results).to eq(updated_board)
   end
 
   context "against the rules" do
