@@ -14,7 +14,7 @@ describe Claim::Rules do
   let(:space) { 0 }
 
   it "is allowed" do
-    subject.allow?(empty_board, space)  
+    expect(subject.allow?(empty_board, space)).to eq(true)
   end
 
 end
