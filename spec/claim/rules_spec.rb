@@ -35,4 +35,14 @@ describe Claim::Rules do
 
   end
 
+  context "space doesn't exist" do
+    let(:board) { "X--------"}
+    let(:space) { 123 }
+
+    it "isn't allowed" do
+      expect(@results).to eq(false)
+    end
+
+  end
+
 end
