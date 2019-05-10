@@ -15,7 +15,7 @@ describe Claim do
   before { @results = claim.(board, space) }
   
   it "checks rules" do
-    expect(rules).to have_received(:allow?)
+    expect(rules).to have_received(:allow?).with(board, space)
   end
 
   it "commits the move" do

@@ -7,7 +7,7 @@ class Claim
 
 
   def call(board, space)
-    return board unless @rules.allow?
+    return board unless @rules.allow?(board, space)
     
     @commit.(board, space) 
   end
