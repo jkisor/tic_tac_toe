@@ -3,7 +3,8 @@ class Claim
   class Commit
 
     def call(board, space)
-      "X--------"
+      board[space] = "X"
+      board
     end
 
   end
