@@ -10,5 +10,6 @@ end
 
 describe Claim::NextShape do
   it do
+    subject.()
   end
 end
