@@ -1,9 +1,9 @@
 class FormatBoard
   
   def call(board)
-    shapes = board.chars
+    spaces = board.chars
 
-    rows = shapes.each_slice(3)
+    rows = spaces.each_slice(3)
 
     formatted_rows = rows.map do |row| 
       "| #{row.join(" | ")} |"
