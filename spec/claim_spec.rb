@@ -2,10 +2,10 @@ require "./lib/claim"
 
 describe Claim do
 
-  subject(:claim) { Claim.new(rules, determine_shape, commit) }
+  subject(:claim) { Claim.new(rules, next_shape, commit) }
 
-  let(:rules)  { double(:allow? => true) }
-  let(:determine_shape)  { double(:call => shape)}
+  let(:rules)      { double(:allow? => true) }
+  let(:next_shape) { double(:call => shape)}
   let(:commit) { double(:call => updated_board) }
 
   let(:board) { double }
@@ -21,7 +21,7 @@ describe Claim do
   end
 
   it "determines shape" do
-    expect(determine_shape).to have_received(:call).with(board)
+    expect(next_shape).to have_received(:call).with(board)
   end
 
   it "commits the move" do
