@@ -2,8 +2,8 @@ class Claim
 
   class Commit
 
-    def call(board, space)
-      board[space] = "X"
+    def call(board, space, shape)
+      board[space] = shape
       board
     end
 
