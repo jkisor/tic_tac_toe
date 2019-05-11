@@ -2,6 +2,7 @@ require "./lib/claim"
 require "./lib/claim/rules"
 require "./lib/claim/next_shape"
 require "./lib/claim/commit"
+
 require "./lib/format_board"
 require "./lib/terminal"
 
@@ -16,12 +17,20 @@ NUM_SPACES = 9
 board = "-" * NUM_SPACES
 space = 0
 
-(0...NUM_SPACES).each do |i|
-  board = claim.(board, i)
+# input = gets.chomp
 
-  text = FormatBoard.new.(board)
+# (0...NUM_SPACES).each do |i|
+while(board.count("-") > 0)
 
-  Terminal::Print.(text)
+  space = gets.chomp.to_i
+  board = claim.(board, space)
+
+  rows = FormatBoard.new.(board)
+
+  rows.each do |row|
+    Terminal::PrintCenter.(row)
+  end
+
 end
 
 

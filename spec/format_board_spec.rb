@@ -4,13 +4,13 @@ describe FormatBoard do
   
   it "" do
     input  = "XOXOXOXOX"
-    output = <<~BOARD.chomp
-       ----------- 
-      | X | O | X |
-      | O | X | O |
-      | X | O | X |
-       ----------- 
-    BOARD
+    output = [
+      " ----------- ",
+      "| X | O | X |",
+      "| O | X | O |",
+      "| X | O | X |",
+      " ----------- "
+    ]
     
     expect( FormatBoard.new.(input) ).to eq(output)
   end

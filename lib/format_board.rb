@@ -13,7 +13,7 @@ class FormatBoard
       " ----------- ",
       formatted_rows,
       " ----------- ",
-    ].flatten.join("\n")
+    ].flatten
 
   end
 
