@@ -6,10 +6,9 @@ class Claim
     @commit = commit
   end
 
-
   def call(board, space)
     return board unless @rules.allow?(board, space)
-    
+
     shape = @determine_shape.(board)
     @commit.(board, space, shape) 
   end
