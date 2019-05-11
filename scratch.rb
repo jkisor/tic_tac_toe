@@ -18,8 +18,7 @@ space = 0
 
 (0...NUM_SPACES).each do |i|
   text = claim.(board, i)
-  
-  Terminal::Clear.()
+
   Terminal::Print.(text)
 end
 
