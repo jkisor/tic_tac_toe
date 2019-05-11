@@ -1,13 +1,6 @@
-class StartGame
+describe "" do
   
-  def call
-  end
-
-end
-
-describe StartGame do
-  
-  it do
+  it "" do
   end
 
 end
