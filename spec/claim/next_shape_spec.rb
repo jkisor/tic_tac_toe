@@ -2,7 +2,10 @@ class Claim
   class NextShape
     
     def call(board)
-      return "O" if board.include?("X")
+      if board.include?("X")
+        return "O"
+      end
+      
       "X"
     end
 
