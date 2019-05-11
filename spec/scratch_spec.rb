@@ -2,13 +2,14 @@
 class FormatBoard
   
   def call(board)
-    space_rows = board.chars.each_slice(3).to_a.map do |row|
+    shapes = board.chars
+    shape_rows = shapes.each_slice(3).map do |row|
       "| #{row.join(" | ")} |"
     end
     
     [
       " ----------- ",
-      space_rows,
+      shape_rows,
       " ----------- ",
     ].flatten.join("\n")
 
