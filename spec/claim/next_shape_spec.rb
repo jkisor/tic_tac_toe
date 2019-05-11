@@ -30,6 +30,14 @@ describe Claim::NextShape do
 
   end
 
+  xcontext "when X's turn'" do
+    
+    it "returns X" do
+      let(:board) { "XO-------" }
 
+      expect(subject.(board)).to eq("X")
+    end
+
+  end
 
 end
