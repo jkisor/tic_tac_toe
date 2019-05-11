@@ -9,7 +9,13 @@ commit = Claim::Commit.new
 
 claim = Claim.new(rules, next_shape, commit)
 
-board = "-" * 9
+NUM_SPACES = 9
+
+board = "-" * NUM_SPACES
 space = 0
 
-puts claim.(board, 0)
+(0...NUM_SPACES)
+  .map { |i| claim.(board, 0) }
+  .each { |board| p board }
+
+
