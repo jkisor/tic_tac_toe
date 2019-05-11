@@ -2,7 +2,7 @@ require "./lib/claim"
 require "./lib/claim/rules"
 require "./lib/claim/next_shape"
 require "./lib/claim/commit"
-
+require "./lib/format_board"
 require "./lib/terminal"
 
 rules      = Claim::Rules.new
