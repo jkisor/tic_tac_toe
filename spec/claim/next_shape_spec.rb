@@ -9,5 +9,6 @@ end
 
 
 describe Claim::NextShape do
-  
+  it do
+  end
 end
