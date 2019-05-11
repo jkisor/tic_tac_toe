@@ -13,22 +13,23 @@ end
 describe Claim::NextShape do
   
   context "board is empty" do
-    
+    let(:board) { "-" * 9 }
+
     it "returns X" do
-      board = "---------"
       expect(subject.(board)).to eq("X")
     end
 
   end
 
   context "when O's turn" do
+    let(:board) { "X--------" }
     
     it "returns O" do
-      board = "X--------"
       expect(subject.(board)).to eq("O")
     end
 
   end
+
 
 
 end
