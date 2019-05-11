@@ -28,7 +28,7 @@ while(board.count("-") > 0)
   rows = FormatBoard.new.(board)
 
   rows.each do |row|
-    Terminal::PrintCenter.(row)
+    Terminal::Print.(row)
   end
 
 end
