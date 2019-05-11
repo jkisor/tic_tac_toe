@@ -15,7 +15,6 @@ board = "-" * NUM_SPACES
 space = 0
 
 (0...NUM_SPACES)
-  .map { |i| claim.(board, i) }
-  .each { |board| p board }
+  .each { |i| p claim.(board, i) }
 
 
