@@ -5,11 +5,12 @@ describe Claim do
   subject(:claim) { Claim.new(rules, determine_shape, commit) }
 
   let(:rules)  { double(:allow? => true) }
-  let(:determine_shape)  { double(:call => "X")}
+  let(:determine_shape)  { double(:call => shape)}
   let(:commit) { double(:call => updated_board) }
 
   let(:board) { double }
   let(:space) { double } # id?
+  let(:shape) { double }
 
   let(:updated_board) { double }
   
@@ -24,7 +25,7 @@ describe Claim do
   end
 
   it "commits the move" do
-    expect(commit).to have_received(:call).with(board, space)
+    expect(commit).to have_received(:call).with(board, space, shape)
   end
 
   it "returns updated board" do

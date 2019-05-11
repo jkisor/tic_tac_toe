@@ -9,8 +9,8 @@ class Claim
 
   def call(board, space)
     return board unless @rules.allow?(board, space)
-    @determine_shape.(board)
-    @commit.(board, space) 
+    shape = @determine_shape.(board)
+    @commit.(board, space, shape) 
   end
 
 end
