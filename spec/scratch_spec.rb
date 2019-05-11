@@ -1,16 +1,19 @@
 
 class FormatBoard
+  ENDCAP = " ----------- "
   
   def call(board)
     shapes = board.chars
-    shape_rows = shapes.each_slice(3).map do |row|
+
+    rows = shapes.each_slice(3)
+
+    formatted_rows = rows.map do |row| 
       "| #{row.join(" | ")} |"
     end
-    
     [
-      " ----------- ",
-      shape_rows,
-      " ----------- ",
+      ENDCAP,
+      formatted_rows,
+      ENDCAP,
     ].flatten.join("\n")
 
   end
