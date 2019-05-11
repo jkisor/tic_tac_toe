@@ -2,11 +2,7 @@ class Claim
   class NextShape
     
     def call(board)
-      if board.count("X") > board.count("O")
-        return "O"
-      end
-
-      "X"
+      (board.count("X") > board.count("O")) ? "O" : "X"
     end
 
   end
