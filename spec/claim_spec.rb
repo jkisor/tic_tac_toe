@@ -2,9 +2,10 @@ require "./lib/claim"
 
 describe Claim do
 
-  subject(:claim) { Claim.new(rules, commit) }
+  subject(:claim) { Claim.new(rules, determine_shape, commit) }
 
   let(:rules)  { double(:allow? => true) }
+  let(:determine_shape)  { double(:call => "X")}
   let(:commit) { double(:call => updated_board) }
 
   let(:board) { double }
@@ -16,6 +17,10 @@ describe Claim do
   
   it "checks rules" do
     expect(rules).to have_received(:allow?).with(board, space)
+  end
+
+  it "determines shape" do
+    expect(determine_shape).to have_received(:call).with(board)
   end
 
   it "commits the move" do
