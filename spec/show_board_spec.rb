@@ -6,6 +6,8 @@ class ShowBoard
   end
 
   def call(board)
+    formatted = @formatter.call(board)
+    
   end
 
 end
@@ -14,14 +16,14 @@ describe ShowBoard do
 
   subject { described_class.new(formatter, printer) }
 
-  let(:formatter) { double }
+  let(:formatter) { double(:call => nil) }
   let(:printer)   { double }
 
   let(:board) { double }
   
   it do
     subject.call(board)
-    # expect(formatter).to have_received(:call)
+    expect(formatter).to have_received(:call)
   end
 
 end
