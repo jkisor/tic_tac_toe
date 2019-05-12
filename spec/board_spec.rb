@@ -13,4 +13,12 @@ describe Board do
     expect(subject.spaces).to eq(data.chars)  
   end
 
+  it "has rows" do
+    expect(subject.rows).to eq([
+      ["-", "-", "-"],
+      ["-", "-", "-"],
+      ["-", "-", "-"],
+    ])
+  end
+
 end

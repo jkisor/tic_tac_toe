@@ -11,7 +11,7 @@ class Board
   end
 
   def rows
-    spaces.each_slice(3)
+    spaces.each_slice(3).to_a
   end
 
 end
