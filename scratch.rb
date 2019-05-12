@@ -13,6 +13,8 @@ require "./lib/play_round"
 require "./lib/start_game"
 require "./lib/end_game"
 
+require "./lib/play_game"
+
 def play_round
   PlayRound.new(
     Terminal::GetInput, 
@@ -51,12 +53,6 @@ board = Board.new("-" * NUM_SPACES)
 
 ###
 
-start_game.(board)
-
-while(board.has_empty_spaces?)
-  board = play_round.(board)
-end
-
-end_game.()
+PlayGame.new(start_game, play_round, end_game).(board)
 
 
