@@ -20,8 +20,10 @@ describe PlayGame do
 
   before { subject.(board) }
   
-  it do
+  it "starts the game" do
     expect(start_game).to have_received(:call).with(board)
   end
+
+  
 
 end
