@@ -10,6 +10,8 @@ require "./lib/board"
 require "./lib/show_board"
 require "./lib/play_round"
 
+require "./lib/end_game"
+
 def play_round
   PlayRound.new(
     Terminal::GetInput, 
@@ -37,8 +39,10 @@ start_game = lambda do |show_board, board|
   show_board.(board)
 end
 
-end_game = lambda do |printer|
-  printer.("Game over. Thanks for playing.")
+def end_game
+  printer = Terminal::Print
+
+  EndGame.new(printer)
 end
 
 NUM_SPACES = 9
