@@ -23,8 +23,11 @@ describe ShowBoard do
 
   before { subject.call(board) }
   
-  it do
+  it "formats the board" do
     expect(formatter).to have_received(:call)
+  end
+  
+  it "prints the formatted board" do
   end
 
 end
