@@ -2,7 +2,7 @@ class PlayGame
 
 end
 
-describe "" do
+describe PlayGame do
 
   it do
   
