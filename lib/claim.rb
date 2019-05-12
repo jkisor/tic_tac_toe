@@ -1,9 +1,9 @@
 class Claim
 
   def initialize(rules, next_shape, commit)
-    @rules  = rules
+    @rules      = rules
     @next_shape = next_shape
-    @commit = commit
+    @commit     = commit
   end
 
   def call(board, space)
