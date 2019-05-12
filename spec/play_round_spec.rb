@@ -2,8 +2,8 @@ class PlayRound
   
   def call(board, get_input, claim, show_board)
     space = get_input.()
-    claim.(board, space)
-    show_board.()
+    new_board = claim.(board, space)
+    show_board.(new_board)
   end
 
 end
@@ -11,11 +11,13 @@ end
 describe PlayRound do
   
   let(:get_input)  { double(:call => space) }
-  let(:claim)      { double(:call => nil) }
+  let(:claim)      { double(:call => new_board) }
   let(:show_board) { double(:call => nil) }
 
   let(:board) { double }
   let(:space) { double }
+
+  let(:new_board) { double }
 
   before { subject.(board, get_input, claim, show_board) }
 
@@ -28,7 +30,7 @@ describe PlayRound do
   end
 
   it "shows board" do
-    expect(show_board).to have_received(:call)
+    expect(show_board).to have_received(:call).with(new_board)
   end
 
 end
