@@ -34,9 +34,7 @@ def show_board
 end
 
 end_game = lambda do
-
   puts "Thanks for playing."
-
 end
 
 NUM_SPACES = 9
