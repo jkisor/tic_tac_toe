@@ -3,7 +3,7 @@ require "./lib/claim/next_shape"
 describe Claim::NextShape do
   
   context "board is empty" do
-    let(:board) { "-" * 9 }
+    let(:board) { Board.new("-" * 9) }
 
     it "returns X" do
       expect(subject.(board)).to eq("X")
@@ -12,7 +12,7 @@ describe Claim::NextShape do
   end
 
   context "when O's turn" do
-    let(:board) { "X--------" }
+    let(:board) { Board.new("X--------") }
     
     it "returns O" do
       expect(subject.(board)).to eq("O")
@@ -21,7 +21,7 @@ describe Claim::NextShape do
   end
 
   context "when X's turn'" do
-    let(:board) { "XO-------" }
+    let(:board) { Board.new("XO-------") }
     
     it "returns X" do
       expect(subject.(board)).to eq("X")
