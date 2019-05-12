@@ -5,6 +5,9 @@ require "./lib/claim/commit"
 
 require "./lib/format_board"
 require "./lib/terminal"
+require "./lib/board"
+
+require "./lib/show_board"
 
 rules      = Claim::Rules.new
 next_shape = Claim::NextShape.new
@@ -17,21 +20,18 @@ NUM_SPACES = 9
 board = Board.new("-" * NUM_SPACES)
 space = 0
 
-def show_board(board)
-  rows = FormatBoard.new.(board)
+formatter  = FormatBoard.new
+printer    = Terminal::Print
+show_board = ShowBoard.new(formatter, printer)
 
-  rows.each do |row|
-    Terminal::Print.(row)
-  end
-end
 
-show_board(board)
+show_board.(board)
 
 while(board.count("-") > 0)
 
   space = gets.chomp.to_i
   board = claim.(board.data, space)
-  show_board(board)
+  show_board.(board)
 
 end
 
