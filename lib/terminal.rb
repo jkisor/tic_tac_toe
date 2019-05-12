@@ -15,4 +15,12 @@ class Terminal
 
   end
 
+  class GetInput
+    
+    def self.call
+      gets.chomp.to_i
+    end
+
+  end
+
 end

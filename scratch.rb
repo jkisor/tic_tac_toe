@@ -29,7 +29,7 @@ show_board.(board)
 
 while(board.spaces.count("-") > 0)
 
-  space = gets.chomp.to_i
+  space = Terminal::GetInput.()
   board = claim.(board, space)
   show_board.(board)
 
