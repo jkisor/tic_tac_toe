@@ -1,6 +1,9 @@
 class PlayRound
   
   def initialize(get_input, claim, show_board)
+    @get_input  = get_input
+    @claim      = claim
+    @show_board = show_board
   end
 
   def call(board, get_input, claim, show_board)
