@@ -33,23 +33,25 @@ def show_board
   ShowBoard.new(formatter, printer)
 end
 
-end_game = lambda do
-  puts "Thanks for playing."
+start_game = lambda do |show_board, board|
+  show_board.(board)
+end
+
+end_game = lambda do |printer|
+  printer.("Game over. Thanks for playing.")
 end
 
 NUM_SPACES = 9
-
 board = Board.new("-" * NUM_SPACES)
-space = 0
 
 ###
 
-show_board.(board)
+start_game.(show_board, board)
 
 while(board.has_empty_spaces?)
   play_round.(board)
 end
 
-end_game.()
+end_game.(Terminal::Print)
 
 
