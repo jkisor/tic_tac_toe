@@ -24,15 +24,19 @@ formatter  = FormatBoard.new
 printer    = Terminal::Print
 show_board = ShowBoard.new(formatter, printer)
 
-
 show_board.(board)
 
-while(board.spaces.count("-") > 0)
+get_input = Terminal::GetInput
 
-  space = Terminal::GetInput.()
+
+def play_round(board, get_input, claim, show_board)
+  space = get_input.()
   board = claim.(board, space)
   show_board.(board)
+end
 
+while(board.has_empty_spaces?)
+  play_round(board, get_input, claim, show_board)
 end
 
 
