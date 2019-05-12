@@ -20,9 +20,10 @@ describe ShowBoard do
   let(:printer)   { double }
 
   let(:board) { double }
+
+  before { subject.call(board) }
   
   it do
-    subject.call(board)
     expect(formatter).to have_received(:call)
   end
 
