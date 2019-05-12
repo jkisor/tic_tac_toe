@@ -27,14 +27,14 @@ show_board = ShowBoard.new(formatter, printer)
 
 get_input = Terminal::GetInput
 
-play_round = PlayRound.new
+play_round = PlayRound.new(get_input, claim, show_board)
 
 ###
 
 show_board.(board)
 
 while(board.has_empty_spaces?)
-  play_round.(board, get_input, claim, show_board)
+  play_round.(board)
 end
 
 
