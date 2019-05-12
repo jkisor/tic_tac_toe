@@ -10,6 +10,7 @@ require "./lib/board"
 require "./lib/show_board"
 require "./lib/play_round"
 
+require "./lib/start_game"
 require "./lib/end_game"
 
 def play_round
@@ -36,7 +37,7 @@ def show_board
 end
 
 start_game = lambda do |show_board, board|
-  show_board.(board)
+  StartGame.new(show_board).(board)
 end
 
 def end_game
