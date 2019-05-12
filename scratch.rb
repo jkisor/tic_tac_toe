@@ -36,8 +36,8 @@ def show_board
   ShowBoard.new(formatter, printer)
 end
 
-start_game = lambda do |show_board, board|
-  StartGame.new(show_board).(board)
+def start_game
+  StartGame.new(show_board)
 end
 
 def end_game
@@ -51,7 +51,7 @@ board = Board.new("-" * NUM_SPACES)
 
 ###
 
-start_game.(show_board, board)
+start_game.(board)
 
 while(board.has_empty_spaces?)
   board = play_round.(board)
