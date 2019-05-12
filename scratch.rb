@@ -17,24 +17,21 @@ NUM_SPACES = 9
 board = "-" * NUM_SPACES
 space = 0
 
-# input = gets.chomp
-
-# (0...NUM_SPACES).each do |i|
-while(board.count("-") > 0)
+def show_board(board)
   rows = FormatBoard.new.(board)
 
   rows.each do |row|
     Terminal::Print.(row)
   end
+end
+
+show_board(board)
+
+while(board.count("-") > 0)
 
   space = gets.chomp.to_i
   board = claim.(board, space)
-
-  rows = FormatBoard.new.(board)
-
-  rows.each do |row|
-    Terminal::Print.(row)
-  end
+  show_board(board)
 
 end
 
