@@ -33,8 +33,10 @@ def show_board
   ShowBoard.new(formatter, printer)
 end
 
-start_game = lambda do |show_board, board|
-  show_board.(board)
+def start_game
+  lambda do |show_board, board|
+    show_board.(board)
+  end
 end
 
 end_game = lambda do |printer|
