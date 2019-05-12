@@ -1,4 +1,5 @@
 require "./lib/claim/rules"
+require "./lib/board"
 
 describe Claim::Rules do
 
@@ -6,7 +7,7 @@ describe Claim::Rules do
 
   context "space is empty" do
     
-    let(:board) { "-" * 9 }
+    let(:board) { Board.new("-" * 9) }
     let(:space) { 0 }
 
     it "is allowed" do
@@ -16,7 +17,7 @@ describe Claim::Rules do
   end
 
   context "space already claimed" do
-    let(:board) { "X--------" }
+    let(:board) { Board.new("X--------") }
     let(:space) { 0 }
 
     it "isn't allowed" do
@@ -26,7 +27,7 @@ describe Claim::Rules do
   end
 
   context "space doesn't exist" do
-    let(:board) { "-" * 9 }
+    let(:board) { Board.new("-" * 9) }
     let(:space) { 666 }
 
     it "isn't allowed" do
