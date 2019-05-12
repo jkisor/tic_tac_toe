@@ -4,20 +4,24 @@ class StartGame
     @show_board = show_board
   end
 
-  def call
-  
+  def call(board)
+    @show_board.()
   end
 
 end
 
 describe StartGame do
-  
+
   subject { described_class.new(show_board) }
 
   let(:show_board) { double(:call => nil) }
 
-  it do
+  let(:board) { double }
 
+  before { subject.(board) }
+
+  it do
+    expect(show_board).to have_received(:call)
   end
 
 end
