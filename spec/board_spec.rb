@@ -1,7 +1,7 @@
 require "./lib/board"
 
 describe Board do
-  subject { described_class.new("-"*9) }
+  subject { described_class.new(data) }
 
   let(:data) { "-" * 9 }
 
