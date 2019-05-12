@@ -1,14 +1,4 @@
-class StartGame
-  
-  def initialize(show_board)
-    @show_board = show_board
-  end
-
-  def call(board)
-    @show_board.(board)
-  end
-
-end
+require "./lib/start_game"
 
 describe StartGame do
 
