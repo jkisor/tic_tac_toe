@@ -53,7 +53,7 @@ board = Board.new("-" * NUM_SPACES)
 start_game.(show_board, board)
 
 while(board.has_empty_spaces?)
-  play_round.(board)
+  board = play_round.(board)
 end
 
 end_game.()
