@@ -52,7 +52,7 @@ NUM_SPACES = 9
 board = Board.new("-" * NUM_SPACES)
 
 ###
-
-PlayGame.new(start_game, play_round, end_game).(board)
+play_game = PlayGame.new(start_game, play_round, end_game)
+play_game.(board)
 
 
