@@ -1,11 +1,24 @@
+class Board
+  
+  def initialize(data)
+    @data = data
+  end
+
+  def spaces
+    @data.chars
+  end
+
+  def rows
+    spaces.each_slice(3)
+  end
+
+end
 class FormatBoard
   
   def call(board)
-    spaces = board.chars
+    b = Board.new(board)
 
-    rows = spaces.each_slice(3)
-
-    formatted_rows = rows.map do |row| 
+    formatted_rows = b.rows.map do |row| 
       "| #{row.join(" | ")} |"
     end
     
