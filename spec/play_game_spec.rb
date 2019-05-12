@@ -4,8 +4,8 @@ class PlayGame
     @start_game = start_game
   end
   
-  def call
-    @start_game.()
+  def call(board)
+    @start_game.(board)
   end
 
 end
@@ -16,10 +16,12 @@ describe PlayGame do
 
   let(:start_game) { double(:call => nil) }
 
-  before { subject.() }
+  let(:board) { double }
+
+  before { subject.(board) }
   
   it do
-    expect(start_game).to have_received(:call)
+    expect(start_game).to have_received(:call).with(board)
   end
 
 end
