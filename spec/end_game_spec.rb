@@ -5,7 +5,7 @@ class EndGame
   end
 
   def call
-    @printer.()
+    @printer.("Game over. Thanks for playing.")
   end
 
 end
@@ -18,8 +18,8 @@ describe EndGame do
 
   before { subject.() }
 
-  it do
-    expect(printer).to have_received(:call)
+  it "prints a message" do
+    expect(printer).to have_received(:call).with("Game over. Thanks for playing.")
   end
 
 end
