@@ -9,9 +9,11 @@ end
 describe PlayRound do
   
   let(:get_input) { double(:call => nil) }
+    
+  before { subject.(get_input) }
 
   it do
-    subject.(get_input)
+    expect(get_input).to have_received(:call)
   end
 
 end
