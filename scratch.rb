@@ -10,6 +10,14 @@ require "./lib/board"
 require "./lib/show_board"
 require "./lib/play_round"
 
+def play_round
+  PlayRound.new(
+    Terminal::GetInput, 
+    claim, 
+    show_board
+  )
+end
+
 def claim
   rules      = Claim::Rules.new
   next_shape = Claim::NextShape.new
@@ -25,13 +33,6 @@ def show_board
   ShowBoard.new(formatter, printer)
 end
 
-def play_round
-  PlayRound.new(
-    Terminal::GetInput, 
-    claim, 
-    show_board
-  )
-end
 
 NUM_SPACES = 9
 
