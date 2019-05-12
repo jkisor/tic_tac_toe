@@ -6,7 +6,7 @@ class PlayRound
     @show_board = show_board
   end
 
-  def call(board, get_input, claim, show_board)
+  def call(board)
     space = @get_input.()
 
     new_board = @claim.(board, space)
