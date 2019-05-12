@@ -8,6 +8,7 @@ require "./lib/terminal"
 require "./lib/board"
 
 require "./lib/show_board"
+require "./lib/play_round"
 
 rules      = Claim::Rules.new
 next_shape = Claim::NextShape.new
