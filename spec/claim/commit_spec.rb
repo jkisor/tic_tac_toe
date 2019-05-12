@@ -1,8 +1,8 @@
 require "./lib/claim/commit"
-
+require "./lib/board"
 describe Claim::Commit do
   
-  let(:board) { "-" * 9 }
+  let(:board) { Board.new("-" * 9) }
   
   it "returns a board with space taken" do
     space = 0
@@ -10,7 +10,7 @@ describe Claim::Commit do
     
     results = subject.call(board, space, shape)
 
-    expect(results).to eq("X--------")
+    expect(results.data).to eq("X--------")
   end
 
   it "returns a board with space taken" do
@@ -19,7 +19,7 @@ describe Claim::Commit do
     
     results = subject.call(board, space, shape)
 
-    expect(results).to eq("---X-----")
+    expect(results.data).to eq("---X-----")
   end
 
 end
