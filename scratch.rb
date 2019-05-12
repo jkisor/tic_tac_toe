@@ -27,10 +27,10 @@ show_board = ShowBoard.new(formatter, printer)
 
 show_board.(board)
 
-while(board.count("-") > 0)
+while(board.spaces.count("-") > 0)
 
   space = gets.chomp.to_i
-  board = claim.(board.data, space)
+  board = Board.new(claim.(board.data, space))
   show_board.(board)
 
 end
