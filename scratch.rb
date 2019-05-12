@@ -21,6 +21,11 @@ space = 0
 
 # (0...NUM_SPACES).each do |i|
 while(board.count("-") > 0)
+  rows = FormatBoard.new.(board)
+
+  rows.each do |row|
+    Terminal::Print.(row)
+  end
 
   space = gets.chomp.to_i
   board = claim.(board, space)
