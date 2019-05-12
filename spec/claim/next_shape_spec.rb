@@ -1,4 +1,5 @@
 require "./lib/claim/next_shape"
+require "./lib/board"
 
 describe Claim::NextShape do
   
