@@ -1,8 +1,9 @@
 class PlayRound
   
-  def call(board, get_input, claim, show_board )
+  def call(board, get_input, claim, show_board)
     space = get_input.()
     claim.(board, space)
+    show_board.()
   end
 
 end
@@ -24,6 +25,10 @@ describe PlayRound do
 
   it "claims space" do
     expect(claim).to have_received(:call).with(board, space)
+  end
+
+  it "shows board" do
+    expect(show_board).to have_received(:call)
   end
 
 end
