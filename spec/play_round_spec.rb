@@ -12,7 +12,7 @@ describe PlayRound do
     
   before { subject.(get_input) }
 
-  it do
+  it "gets input" do
     expect(get_input).to have_received(:call)
   end
 
