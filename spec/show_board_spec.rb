@@ -5,9 +5,9 @@ class ShowBoard
     @printer   = printer
   end
 
-  def call
+  def call(board)
   end
-  
+
 end
 
 describe ShowBoard do
@@ -16,9 +16,12 @@ describe ShowBoard do
 
   let(:formatter) { double }
   let(:printer)   { double }
+
+  let(:board) { double }
   
   it do
-    subject.call
+    subject.call(board)
+    # expect(formatter).to have_received(:call)
   end
 
 end
