@@ -1,5 +1,8 @@
 class PlayRound
   
+  def initialize(get_input, claim, show_board)
+  end
+
   def call(board, get_input, claim, show_board)
     space = get_input.()
 
