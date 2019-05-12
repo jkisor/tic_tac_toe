@@ -9,4 +9,8 @@ describe Board do
     expect(subject.data).to eq(data)
   end
 
+  it "has spaces" do
+    expect(subject.spaces).to eq(data.chars)  
+  end
+
 end
