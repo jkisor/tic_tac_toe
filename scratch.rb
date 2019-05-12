@@ -30,7 +30,7 @@ show_board.(board)
 while(board.spaces.count("-") > 0)
 
   space = gets.chomp.to_i
-  board = Board.new(claim.(board.data, space))
+  board = claim.(board, space)
   show_board.(board)
 
 end
