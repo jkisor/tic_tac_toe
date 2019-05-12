@@ -16,8 +16,9 @@ describe EndGame do
 
   let(:printer) { double(:call => nil) }
 
+  before { subject.() }
+
   it do
-    subject.()
     expect(printer).to have_received(:call)
   end
 
