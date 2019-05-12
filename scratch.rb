@@ -14,7 +14,7 @@ claim = Claim.new(rules, next_shape, commit)
 
 NUM_SPACES = 9
 
-board = "-" * NUM_SPACES
+board = Board.new("-" * NUM_SPACES)
 space = 0
 
 def show_board(board)
@@ -30,7 +30,7 @@ show_board(board)
 while(board.count("-") > 0)
 
   space = gets.chomp.to_i
-  board = claim.(board, space)
+  board = claim.(board.data, space)
   show_board(board)
 
 end

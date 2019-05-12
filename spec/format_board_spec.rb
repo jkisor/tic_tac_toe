@@ -1,9 +1,9 @@
 require "./lib/format_board"
-
+require "./lib/board"
 describe FormatBoard do
   
   it "" do
-    input  = "XOXOXOXOX"
+    input  = Board.new("XOXOXOXOX")
     output = [
       " ----------- ",
       "| X | O | X |",
