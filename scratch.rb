@@ -56,6 +56,6 @@ while(board.has_empty_spaces?)
   play_round.(board)
 end
 
-end_game.(Terminal::Print)
+end_game.()
 
 
