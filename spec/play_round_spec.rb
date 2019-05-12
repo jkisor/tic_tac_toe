@@ -13,7 +13,7 @@ describe PlayRound do
 
   let(:new_board) { double }
 
-  before { subject.(board) }
+  before { @results = subject.(board) }
 
   it "gets input" do
     expect(get_input).to have_received(:call)
@@ -25,6 +25,10 @@ describe PlayRound do
 
   it "shows board" do
     expect(show_board).to have_received(:call).with(new_board)
+  end
+
+  it "returns new board" do
+    expect(@results).to eq(new_board)
   end
 
 end

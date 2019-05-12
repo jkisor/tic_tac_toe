@@ -12,6 +12,8 @@ class PlayRound
     new_board = @claim.(board, space)
     
     @show_board.(new_board)
+
+    new_board
   end
 
 end
