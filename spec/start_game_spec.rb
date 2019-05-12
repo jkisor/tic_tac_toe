@@ -5,7 +5,7 @@ class StartGame
   end
 
   def call(board)
-    @show_board.()
+    @show_board.(board)
   end
 
 end
@@ -21,7 +21,7 @@ describe StartGame do
   before { subject.(board) }
 
   it do
-    expect(show_board).to have_received(:call)
+    expect(show_board).to have_received(:call).with(board)
   end
 
 end
