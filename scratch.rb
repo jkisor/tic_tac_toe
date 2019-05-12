@@ -28,15 +28,10 @@ show_board.(board)
 
 get_input = Terminal::GetInput
 
-
-def play_round(board, get_input, claim, show_board)
-  space = get_input.()
-  board = claim.(board, space)
-  show_board.(board)
-end
+play_round = PlayRound.new
 
 while(board.has_empty_spaces?)
-  play_round(board, get_input, claim, show_board)
+  play_round.(board, get_input, claim, show_board)
 end
 
 
