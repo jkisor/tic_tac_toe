@@ -33,6 +33,11 @@ def show_board
   ShowBoard.new(formatter, printer)
 end
 
+end_game = lambda do
+
+  puts "Thanks for playing."
+
+end
 
 NUM_SPACES = 9
 
@@ -46,5 +51,7 @@ show_board.(board)
 while(board.has_empty_spaces?)
   play_round.(board)
 end
+
+end_game.()
 
 
