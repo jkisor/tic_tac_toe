@@ -1,7 +1,8 @@
-class Game
+require "./lib/game/play"
+module Game
   
   def self.play
-    PlayGame.new(start_game, play_round, end_game).()
+    Game::Play.new(start_game, play_round, end_game).()
   end
 
   def self.play_round
