@@ -1,7 +1,5 @@
 module Game
-
   class Play
-    
     class End
 
       def initialize(printer)
