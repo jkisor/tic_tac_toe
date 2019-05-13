@@ -4,17 +4,17 @@ describe PlayGame do
 
   subject { described_class.new(start_game, play_round, end_game) }
 
-  let(:start_game) { double(:call => nil) }
+  let(:start_game) { double(:call => board) }
   let(:play_round) { double(:call => next_board) }
   let(:end_game)   { double(:call => nil) }
 
   let(:board) { double(:has_empty_spaces? => true) }
   let(:next_board) { double(:has_empty_spaces? => false) }
 
-  before { subject.(board) }
+  before { subject.() }
   
   it "starts the game" do
-    expect(start_game).to have_received(:call).with(board)
+    expect(start_game).to have_received(:call)
   end
 
   it "plays round" do

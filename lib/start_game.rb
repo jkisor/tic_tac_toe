@@ -1,11 +1,16 @@
 class StartGame
   
-  def initialize(show_board)
-    @show_board = show_board
+  def initialize(setup_board, show_board)
+    @setup_board = setup_board
+    @show_board  = show_board
   end
 
-  def call(board)
+  def call
+    board = @setup_board.()
+
     @show_board.(board)
+    
+    board
   end
 
 end

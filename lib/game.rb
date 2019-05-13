@@ -1,7 +1,7 @@
 class Game
   
-  def self.play(board)
-    PlayGame.new(start_game, play_round, end_game).(board)
+  def self.play
+    PlayGame.new(start_game, play_round, end_game).()
   end
 
   def self.play_round
@@ -28,7 +28,8 @@ class Game
   end
   
   def self.start_game
-    StartGame.new(show_board)
+    setup_board = SetupBoard.new
+    StartGame.new(setup_board, show_board)
   end
   
   def self.end_game

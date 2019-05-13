@@ -2,16 +2,27 @@ require "./lib/start_game"
 
 describe StartGame do
 
-  subject { described_class.new(show_board) }
+  subject { described_class.new(setup_board, show_board) }
 
-  let(:show_board) { double(:call => nil) }
+  let(:setup_board) { double(:call => board) }
+  let(:show_board)  { double(:call => nil) }
 
   let(:board) { double }
 
-  before { subject.(board) }
+  before do 
+    @results = subject.()
+  end
 
-  it do
+  it "sets up the board" do
+    expect(setup_board).to have_received(:call)
+  end
+  
+  it "shows the board" do
     expect(show_board).to have_received(:call).with(board)
+  end
+
+  it "returns board" do
+    expect(@results).to eq(board)
   end
 
 end

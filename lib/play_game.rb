@@ -6,9 +6,9 @@ class PlayGame
     @end_game   = end_game
   end
   
-  def call(board)
+  def call()
 
-    @start_game.(board)
+    board = @start_game.()
 
     while(board.has_empty_spaces?)
       board = @play_round.(board)
