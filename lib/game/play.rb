@@ -8,7 +8,7 @@ module Game
       @end_game   = end_game
     end
     
-    def call()
+    def call
 
       board = @start_game.()
 
@@ -21,5 +21,5 @@ module Game
     end
 
   end
-  
+
 end
