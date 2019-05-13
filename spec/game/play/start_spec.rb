@@ -1,6 +1,6 @@
-require "./lib/start_game"
+require "./lib/game/play/start"
 
-describe StartGame do
+describe Game::Play::Start do
 
   subject { described_class.new(setup_board, show_board) }
 

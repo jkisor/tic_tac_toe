@@ -1,6 +1,6 @@
-require "./lib/play_game"
+require "./lib/game/play"
 
-describe PlayGame do
+describe Game::Play do
 
   subject { described_class.new(start_game, play_round, end_game) }
 
