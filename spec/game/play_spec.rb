@@ -12,7 +12,7 @@ describe Game::Play do
   let(:next_board) { double(:has_empty_spaces? => false) }
 
   before { subject.() }
-  
+
   it "starts the game" do
     expect(start_game).to have_received(:call)
   end

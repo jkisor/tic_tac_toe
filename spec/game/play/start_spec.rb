@@ -9,14 +9,14 @@ describe Game::Play::Start do
 
   let(:board) { double }
 
-  before do 
+  before do
     @results = subject.()
   end
 
   it "sets up the board" do
     expect(setup_board).to have_received(:call)
   end
-  
+
   it "shows the board" do
     expect(show_board).to have_received(:call).with(board)
   end

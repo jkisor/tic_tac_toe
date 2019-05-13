@@ -10,7 +10,7 @@ describe Board do
   end
 
   it "has spaces" do
-    expect(subject.spaces).to eq(data.chars)  
+    expect(subject.spaces).to eq(data.chars)
   end
 
   it "has rows" do
@@ -31,7 +31,7 @@ describe Board do
     it "doesn't have spaces" do
       expect(subject).not_to have_empty_spaces
     end
-  
+
   end
 
 end

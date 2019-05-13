@@ -10,7 +10,7 @@ class Claim
     return board unless @rules.allow?(board, space)
 
     shape = @next_shape.(board)
-    @commit.(board, space, shape) 
+    @commit.(board, space, shape)
   end
 
 end

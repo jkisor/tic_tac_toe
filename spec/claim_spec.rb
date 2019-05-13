@@ -13,9 +13,9 @@ describe Claim do
   let(:shape) { double }
 
   let(:updated_board) { double }
-  
+
   before { @results = claim.(board, space) }
-  
+
   it "checks rules" do
     expect(rules).to have_received(:allow?).with(board, space)
   end
@@ -40,7 +40,5 @@ describe Claim do
     end
 
   end
-  
 
-  
 end
