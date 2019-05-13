@@ -29,7 +29,7 @@ module Game
   end
   
   def self.start_game
-    setup_board = SetupBoard.new
+    setup_board = Game::Play::Start::SetupBoard.new
     Game::Play::Start.new(setup_board, show_board)
   end
   
