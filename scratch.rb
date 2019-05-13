@@ -14,8 +14,7 @@ require "./lib/setup_board"
 
 require "./lib/game/play"
 require "./lib/game/play/start"
-
-require "./lib/end_game"
+require "./lib/game/play/end"
 
 require "./lib/game"
 

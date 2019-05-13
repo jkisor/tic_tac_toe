@@ -36,7 +36,7 @@ module Game
   def self.end_game
     printer = Terminal::Print
   
-    EndGame.new(printer)
+    Game::Play::End.new(printer)
   end
 
 end
