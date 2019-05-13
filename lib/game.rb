@@ -2,11 +2,11 @@ require "./lib/game/play"
 module Game
   
   def self.play
-    Game::Play.new(start_game, loop_game, end_game).()
+    Play.new(start_game, loop_game, end_game).()
   end
 
   def self.loop_game
-    Game::Play::Loop.new(
+    Play::Loop.new(
       Terminal::GetInput, 
       claim, 
       show_board

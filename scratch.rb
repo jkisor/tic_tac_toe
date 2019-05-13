@@ -8,7 +8,6 @@ require "./lib/terminal"
 require "./lib/board"
 
 require "./lib/show_board"
-require "./lib/play_round"
 
 require "./lib/setup_board"
 
