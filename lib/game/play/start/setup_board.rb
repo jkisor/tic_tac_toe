@@ -2,7 +2,6 @@ require "./lib/board"
 module Game
   class Play
     class Start
-    
       class SetupBoard
 
         def call
@@ -10,7 +9,7 @@ module Game
         end
 
       end
-      
+
     end
   end
 end
