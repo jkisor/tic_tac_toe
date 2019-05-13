@@ -30,7 +30,7 @@ module Game
   
   def self.start_game
     setup_board = SetupBoard.new
-    StartGame.new(setup_board, show_board)
+    Game::Play::Start.new(setup_board, show_board)
   end
   
   def self.end_game

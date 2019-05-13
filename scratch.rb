@@ -11,10 +11,11 @@ require "./lib/show_board"
 require "./lib/play_round"
 
 require "./lib/setup_board"
-require "./lib/start_game"
-require "./lib/end_game"
 
-require "./lib/play_game"
+require "./lib/game/play"
+require "./lib/game/play/start"
+
+require "./lib/end_game"
 
 require "./lib/game"
 
