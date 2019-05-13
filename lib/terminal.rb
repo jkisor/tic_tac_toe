@@ -1,6 +1,6 @@
 class Terminal
   class Clear
-    
+
     def self.call
       system("clear")
     end
@@ -8,7 +8,7 @@ class Terminal
   end
 
   class Print
-    
+
     def self.call(text)
       puts text
     end
@@ -16,7 +16,7 @@ class Terminal
   end
 
   class GetInput
-    
+
     def self.call
       gets.chomp.to_i
     end

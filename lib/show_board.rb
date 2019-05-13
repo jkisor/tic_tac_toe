@@ -1,5 +1,5 @@
 class ShowBoard
-  
+
   def initialize(formatter, printer)
     @formatter = formatter
     @printer   = printer
