@@ -6,7 +6,7 @@ describe Claim do
 
   let(:rules)      { double(:allow? => true) }
   let(:next_shape) { double(:call => shape)}
-  let(:commit) { double(:call => updated_board) }
+  let(:commit)     { double(:call => updated_board) }
 
   let(:board) { double }
   let(:space) { double } # id?
