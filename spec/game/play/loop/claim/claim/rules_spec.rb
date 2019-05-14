@@ -6,7 +6,7 @@ describe Game::Play::Loop::Claim::Rules do
   before { @results = subject.allow?(board, space) }
 
   context "space is empty" do
-    
+
     let(:board) { Board.new("-" * 9) }
     let(:space) { 0 }
 
