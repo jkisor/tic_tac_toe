@@ -1,7 +1,7 @@
-require "./lib/claim/next_shape"
+require "./lib/game/play/loop/claim/next_shape"
 require "./lib/board"
 
-describe Claim::NextShape do
+describe Game::Play::Loop::Claim::NextShape do
   
   context "board is empty" do
     let(:board) { Board.new("-" * 9) }

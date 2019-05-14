@@ -1,6 +1,6 @@
-require "./lib/claim/commit"
+require "./lib/game/play/loop/claim/commit"
 require "./lib/board"
-describe Claim::Commit do
+describe Game::Play::Loop::Claim::Commit do
   
   let(:board) { Board.new("-" * 9) }
   

@@ -1,7 +1,7 @@
-require "./lib/claim/rules"
+require "./lib/game/play/loop/claim/rules"
 require "./lib/board"
 
-describe Claim::Rules do
+describe Game::Play::Loop::Claim::Rules do
 
   before { @results = subject.allow?(board, space) }
 

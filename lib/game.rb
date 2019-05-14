@@ -14,9 +14,9 @@ module Game
   end
 
   def self.claim
-    rules      = ::Claim::Rules.new
-    next_shape = ::Claim::NextShape.new
-    commit     = ::Claim::Commit.new
+    rules      = Play::Loop::Claim::Rules.new
+    next_shape = Play::Loop::Claim::NextShape.new
+    commit     = Play::Loop::Claim::Commit.new
 
     Play::Loop::Claim.new(rules, next_shape, commit)
   end
