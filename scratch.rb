@@ -1,4 +1,4 @@
-require "./lib/claim"
+require "./lib/game/play/loop/claim"
 require "./lib/claim/rules"
 require "./lib/claim/next_shape"
 require "./lib/claim/commit"
