@@ -11,9 +11,9 @@ module Game
 
   def self.loop_game
     Play::Loop.new(
-      Terminal::GetInput,
-      Play::Loop::Claim.build,
-      ShowBoard.build
+      :get_input  => Terminal::GetInput,
+      :claim      => Play::Loop::Claim.build,
+      :show_board => ShowBoard.build
     )
   end
 
