@@ -3,9 +3,9 @@ module Game
 
   def self.play
     Play.new(
-      Play::Start.build, 
-      Play::Loop.build, 
-      Play::End.build
+      :start_game => Play::Start.build, 
+      :play_round => Play::Loop.build, 
+      :end_game   => Play::End.build
     ).()
   end
 

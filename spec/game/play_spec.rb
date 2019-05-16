@@ -2,7 +2,13 @@ require "./lib/game/play"
 
 describe Game::Play do
 
-  subject { described_class.new(start_game, play_round, end_game) }
+  subject do
+    described_class.new(
+      :start_game => start_game, 
+      :play_round => play_round, 
+      :end_game   => end_game
+    )
+  end
 
   let(:start_game) { double(:call => board) }
   let(:play_round) { double(:call => next_board) }
