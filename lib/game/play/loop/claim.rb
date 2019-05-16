@@ -4,7 +4,7 @@ module Game
       class Claim
 
         def self.build
-          Play::Loop::Claim.new(
+          new(
             :rules      => Rules.new,
             :next_shape => NextShape.new,
             :commit     => Commit.new

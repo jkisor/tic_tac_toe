@@ -8,17 +8,9 @@ module Game
   def self.loop_game
     Play::Loop.new(
       Terminal::GetInput,
-      claim,
+      Play::Loop::Claim.build,
       ShowBoard.build
     )
-  end
-
-  def self.claim
-    Play::Loop::Claim.build
-  end
-
-  def self.show_board
-    
   end
 
   def self.end_game
