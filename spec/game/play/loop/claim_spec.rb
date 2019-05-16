@@ -2,7 +2,13 @@ require "./lib/game/play/loop/claim"
 
 describe Game::Play::Loop::Claim do
 
-  subject(:claim) { described_class.new(rules, next_shape, commit) }
+  subject(:claim) do
+    described_class.new(
+      :rules      => rules,
+      :next_shape => next_shape,
+      :commit     => commit
+    )
+  end
 
   let(:rules)      { double(:allow? => true) }
   let(:next_shape) { double(:call => shape)}

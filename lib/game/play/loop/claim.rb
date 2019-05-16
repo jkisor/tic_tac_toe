@@ -3,7 +3,7 @@ module Game
     class Loop
       class Claim
 
-        def initialize(rules, next_shape, commit)
+        def initialize(rules:, next_shape:, commit:)
           @rules      = rules
           @next_shape = next_shape
           @commit     = commit
