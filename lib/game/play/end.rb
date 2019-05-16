@@ -2,6 +2,10 @@ module Game
   class Play
     class End
 
+      def self.build
+        new(Terminal::Print)
+      end
+
       def initialize(printer)
         @printer = printer
       end
