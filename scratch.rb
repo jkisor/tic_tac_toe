@@ -17,6 +17,4 @@ require "./lib/game/play/start/setup_board"
 require "./lib/game/play/loop"
 require "./lib/game/play/end"
 
-require "./lib/game"
-
-Game.play
+Game::Play.build.()
