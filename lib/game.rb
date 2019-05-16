@@ -10,11 +10,7 @@ module Game
   end
 
   def self.loop_game
-    Play::Loop.new(
-      :get_input  => Terminal::GetInput,
-      :claim      => Play::Loop::Claim.build,
-      :show_board => ShowBoard.build
-    )
+    Play::Loop.build
   end
 
 end

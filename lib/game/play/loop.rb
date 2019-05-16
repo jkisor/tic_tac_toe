@@ -4,6 +4,14 @@ module Game
 
     class Loop
 
+      def self.build
+        new(
+          :get_input  => Terminal::GetInput,
+          :claim      => Claim.build,
+          :show_board => ShowBoard.build
+        )
+      end
+
       def initialize(get_input:, claim:, show_board:)
         @get_input  = get_input
         @claim      = claim
