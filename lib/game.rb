@@ -14,11 +14,7 @@ module Game
   end
 
   def self.claim
-    Play::Loop::Claim.new(
-      :rules      => Play::Loop::Claim::Rules.new,
-      :next_shape => Play::Loop::Claim::NextShape.new,
-      :commit     => Play::Loop::Claim::Commit.new
-    )
+    Play::Loop::Claim.build
   end
 
   def self.show_board

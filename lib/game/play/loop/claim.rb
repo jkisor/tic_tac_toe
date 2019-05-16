@@ -3,6 +3,14 @@ module Game
     class Loop
       class Claim
 
+        def self.build
+          Play::Loop::Claim.new(
+            :rules      => Rules.new,
+            :next_shape => NextShape.new,
+            :commit     => Commit.new
+          )
+        end
+
         def initialize(rules:, next_shape:, commit:)
           @rules      = rules
           @next_shape = next_shape
