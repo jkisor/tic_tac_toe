@@ -22,10 +22,7 @@ module Game
   end
 
   def self.show_board
-    formatter  = FormatBoard.new
-    printer    = Terminal::Print
-
-    ShowBoard.new(formatter, printer)
+    ShowBoard.build
   end
 
   def self.start_game

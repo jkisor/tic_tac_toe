@@ -1,6 +1,15 @@
+# require "./lib/format_board"
+
 class ShowBoard
 
-  def initialize(formatter, printer)
+  def self.build
+    new(
+      :formatter => FormatBoard.new,
+      :printer   => Terminal::Print
+    )
+  end
+
+  def initialize(formatter:, printer:)
     @formatter = formatter
     @printer   = printer
   end

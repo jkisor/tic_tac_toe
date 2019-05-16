@@ -2,7 +2,12 @@ require "./lib/show_board"
 
 describe ShowBoard do
 
-  subject { described_class.new(formatter, printer) }
+  subject do 
+    described_class.new(
+      :formatter => formatter, 
+      :printer   => printer
+    )
+  end
 
   let(:formatter) { double(:call => formatted_board) }
   let(:printer)   { double(:call => nil) }
@@ -21,4 +26,5 @@ describe ShowBoard do
     expect(printer).to have_received(:call).with(formatted_board)
   end
 
+  
 end
