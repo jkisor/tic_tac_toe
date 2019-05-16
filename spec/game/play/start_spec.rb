@@ -2,7 +2,12 @@ require "./lib/game/play/start"
 
 describe Game::Play::Start do
 
-  subject { described_class.new(setup_board, show_board) }
+  subject do 
+    described_class.new(
+      :setup_board => setup_board, 
+      :show_board  => show_board
+    ) 
+  end
 
   let(:setup_board) { double(:call => board) }
   let(:show_board)  { double(:call => nil) }
