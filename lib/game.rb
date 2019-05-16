@@ -27,8 +27,6 @@ module Game
 
   def self.start_game
     Game::Play::Start.build
-    # setup_board = Game::Play::Start::SetupBoard.new
-    # Game::Play::Start.new(setup_board, show_board)
   end
 
   def self.end_game
