@@ -7,7 +7,7 @@ module Game
         :start_game => Start.build, 
         :play_round => Loop.build, 
         :end_game   => End.build
-      ).()
+      )
     end
 
     def initialize(start_game:, play_round:, end_game:)
