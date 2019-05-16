@@ -2,7 +2,13 @@ require "./lib/game/play/loop"
 
 describe Game::Play::Loop do
 
-  subject { described_class.new(get_input, claim, show_board) }
+  subject do 
+    described_class.new(
+      :get_input  => get_input, 
+      :claim      => claim, 
+      :show_board => show_board
+    )
+  end
 
   let(:get_input)  { double(:call => space) }
   let(:claim)      { double(:call => new_board) }
