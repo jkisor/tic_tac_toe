@@ -20,7 +20,7 @@ module Game
 
       board = @start_game.()
 
-      while(board.has_empty_spaces?)
+      while(board.done?)
         board = @play_round.(board)
       end
 

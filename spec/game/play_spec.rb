@@ -14,8 +14,8 @@ describe Game::Play do
   let(:play_round) { double(:call => next_board) }
   let(:end_game)   { double(:call => nil) }
 
-  let(:board) { double(:has_empty_spaces? => true) }
-  let(:next_board) { double(:has_empty_spaces? => false) }
+  let(:board)      { double(:done? => true) }
+  let(:next_board) { double(:done? => false) }
 
   before { subject.() }
 

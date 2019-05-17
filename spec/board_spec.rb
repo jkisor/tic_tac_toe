@@ -22,14 +22,14 @@ describe Board do
   end
 
   it "has empty spaces" do
-    expect(subject).to have_empty_spaces
+    expect(subject).to be_done
   end
 
   context "when no empty spaces" do
     let(:data) { "X" * 9 }
 
     it "doesn't have spaces" do
-      expect(subject).not_to have_empty_spaces
+      expect(subject).not_to be_done
     end
 
   end

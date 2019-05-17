@@ -14,7 +14,7 @@ class Board
     spaces.each_slice(3).to_a
   end
 
-  def has_empty_spaces?
+  def done?
     spaces.count("-") > 0
   end
 
