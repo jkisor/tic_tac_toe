@@ -15,18 +15,18 @@ class Board
   end
 
   def done?
-    first_row_winner? || second_row_winner? || !(spaces.count("-") > 0)
+    top_row_winner? || middle_row_winner? || !(spaces.count("-") > 0)
   end
 
   private
 
-  def first_row_winner?
-    row = rows.first
+  def top_row_winner?
+    row = rows[0]
     row.count("-") == 0 && row.uniq.size == 1
   end
 
-  def second_row_winner?
-    row = spaces[3..5]
+  def middle_row_winner?
+    row = rows[1]
     row.count("-") == 0 && row.uniq.size == 1
   end
 
