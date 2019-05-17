@@ -25,7 +25,7 @@ class Board
   end
 
   def winner?
-    top_row_winner? || middle_row_winner? || bottom_row_winner?
+    rows.any? { |row| row_winner?(row) }
   end
 
   def row_winner?(row)
