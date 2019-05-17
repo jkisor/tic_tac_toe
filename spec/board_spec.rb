@@ -22,14 +22,14 @@ describe Board do
   end
 
   it "has empty spaces" do
-    expect(subject).to be_done
+    expect(subject).not_to be_done
   end
 
   context "when no empty spaces" do
     let(:data) { "X" * 9 }
 
     it "is done" do
-      expect(subject).not_to be_done
+      expect(subject).to be_done
     end
 
   end
@@ -37,7 +37,7 @@ describe Board do
   context "first row taken by same shape" do
     let(:data) { "XXX------" }
 
-    it "is done "
+    it "is done"
   end
 
 end

@@ -15,7 +15,7 @@ class Board
   end
 
   def done?
-    spaces.count("-") > 0
+    !(spaces.count("-") > 0)
   end
 
 end
