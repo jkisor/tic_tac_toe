@@ -34,7 +34,7 @@ describe Board do
 
   end
 
-  context "first row taken by same shape" do
+  context "top row taken by same shape" do
     let(:data) { "XXX------" }
 
     it "is done" do
@@ -43,8 +43,17 @@ describe Board do
 
   end
 
-  context "second row taken by same shape" do
+  context "middle row taken by same shape" do
     let(:data) { "---XXX---" }
+
+    it "is done" do
+      expect(subject).to be_done
+    end
+    
+  end
+
+  context "bottom row taken by same shape" do
+    let(:data) { "------XXX" }
 
     it "is done" do
       expect(subject).to be_done

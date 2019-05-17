@@ -15,7 +15,7 @@ class Board
   end
 
   def done?
-    top_row_winner? || middle_row_winner? || !(spaces.count("-") > 0)
+    top_row_winner? || middle_row_winner? || bottom_row_winner? || !(spaces.count("-") > 0)
   end
 
   private
@@ -29,5 +29,11 @@ class Board
     row = rows[1]
     row.count("-") == 0 && row.uniq.size == 1
   end
+
+  def bottom_row_winner?
+    row = rows[2]
+    row.count("-") == 0 && row.uniq.size == 1
+  end
+
 
 end
