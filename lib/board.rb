@@ -24,11 +24,17 @@ class Board
     !(spaces.count("-") > 0)
   end
 
+  def columns
+    [
+      rows.map { |row| row[0] },
+      rows.map { |row| row[1] },
+      rows.map { |row| row[2] }
+    ]
+  end
+
   def winner?
     rows.any? { |row| row_winner?(row) } ||
-    col_winner?(rows.map { |row| row[0] }) || 
-    col_winner?(rows.map { |row| row[1] }) ||
-    col_winner?(rows.map { |row| row[2] })
+    columns.any? { |col|  col_winner?(col) }
   end
 
   def row_winner?(row)
