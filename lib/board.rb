@@ -31,18 +31,5 @@ class Board
   def row_winner?(row)
     row.count("-") == 0 && row.uniq.size == 1
   end
-
-  def top_row_winner?
-    row_winner?(rows[0])
-  end
-
-  def middle_row_winner?
-    row_winner?(rows[1])
-  end
-
-  def bottom_row_winner?
-    row_winner?(rows[2])
-  end
-
-
+  
 end
