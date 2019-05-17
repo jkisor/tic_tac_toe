@@ -15,10 +15,14 @@ class Board
   end
 
   def done?
-    winner? || !(spaces.count("-") > 0)
+    winner? || no_empty_spaces?
   end
 
   private
+
+  def no_empty_spaces?
+    !(spaces.count("-") > 0)
+  end
 
   def winner?
     top_row_winner? || middle_row_winner? || bottom_row_winner?
