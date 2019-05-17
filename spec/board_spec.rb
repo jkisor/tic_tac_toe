@@ -40,6 +40,16 @@ describe Board do
     it "is done" do
       expect(subject).to be_done
     end
+
+  end
+
+  context "second row taken by same shape" do
+    let(:data) { "---XXX---" }
+
+    it "is done" do
+      expect(subject).to be_done
+    end
+    
   end
 
 end
