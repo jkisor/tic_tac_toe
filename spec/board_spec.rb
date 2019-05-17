@@ -28,10 +28,16 @@ describe Board do
   context "when no empty spaces" do
     let(:data) { "X" * 9 }
 
-    it "doesn't have spaces" do
+    it "is done" do
       expect(subject).not_to be_done
     end
 
+  end
+
+  context "first row taken by same shape" do
+    let(:data) { "XXX------" }
+
+    it "is done "
   end
 
 end

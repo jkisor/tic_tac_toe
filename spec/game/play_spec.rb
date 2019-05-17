@@ -14,8 +14,8 @@ describe Game::Play do
   let(:play_round) { double(:call => next_board) }
   let(:end_game)   { double(:call => nil) }
 
-  let(:board)      { double(:done? => true) }
-  let(:next_board) { double(:done? => false) }
+  let(:board)      { double(:done? => false) }
+  let(:next_board) { double(:done? => true) }
 
   before { subject.() }
 

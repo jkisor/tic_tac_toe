@@ -20,7 +20,7 @@ module Game
 
       board = @start_game.()
 
-      while(board.done?)
+      while(!board.done?)
         board = @play_round.(board)
       end
 
