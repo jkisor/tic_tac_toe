@@ -27,7 +27,8 @@ class Board
   def winner?
     rows.any? { |row| row_winner?(row) } ||
     col_winner?(rows.map(&:first)) || 
-    col_winner?(rows.map { |row| row[1] })
+    col_winner?(rows.map { |row| row[1] }) ||
+    col_winner?(rows.map { |row| row[2] })
   end
 
   def row_winner?(row)
