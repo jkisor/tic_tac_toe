@@ -61,4 +61,12 @@ describe Board do
     
   end
 
+  context "left column taken by same shape" do
+    let(:data) { "X--X--X--" }
+
+    it "is done" do
+      expect(subject).to be_done
+    end
+  end
+
 end

@@ -25,11 +25,16 @@ class Board
   end
 
   def winner?
-    rows.any? { |row| row_winner?(row) }
+    rows.any? { |row| row_winner?(row) } ||
+    col_winner?(rows.map(&:first))
   end
 
   def row_winner?(row)
     row.count("-") == 0 && row.uniq.size == 1
   end
-  
+
+  def col_winner?(col)
+    col.count("-") == 0 && col.uniq.size == 1
+  end
+
 end
