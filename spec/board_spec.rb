@@ -67,6 +67,16 @@ describe Board do
     it "is done" do
       expect(subject).to be_done
     end
+
+  end
+
+  context "middle column taken by same shape" do
+    let(:data) { "-X--X--X-" }
+
+    it "is done" do
+      expect(subject).to be_done
+    end
+    
   end
 
 end
