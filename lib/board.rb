@@ -25,11 +25,9 @@ class Board
   end
 
   def columns
-    [
-      rows.map { |row| row[0] },
-      rows.map { |row| row[1] },
-      rows.map { |row| row[2] }
-    ]
+    (0..2).map do |n|
+      rows.map { |row| row[n] }
+    end
   end
 
   def winner?
