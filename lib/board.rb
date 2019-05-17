@@ -37,13 +37,11 @@ class Board
   end
 
   def middle_row_winner?
-    row = rows[1]
-    row.count("-") == 0 && row.uniq.size == 1
+    row_winner?(rows[1])
   end
 
   def bottom_row_winner?
-    row = rows[2]
-    row.count("-") == 0 && row.uniq.size == 1
+    row_winner?(rows[2])
   end
 
 
