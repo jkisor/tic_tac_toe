@@ -15,7 +15,14 @@ class Board
   end
 
   def done?
-    !(spaces.count("-") > 0)
+    first_row_winner? || !(spaces.count("-") > 0)
+  end
+
+  private
+
+  def first_row_winner?
+    rows = spaces.first(3)
+    rows.count("-") == 0 && rows.uniq.size == 1
   end
 
 end
