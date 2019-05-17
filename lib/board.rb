@@ -15,10 +15,14 @@ class Board
   end
 
   def done?
-    top_row_winner? || middle_row_winner? || bottom_row_winner? || !(spaces.count("-") > 0)
+    winner? || !(spaces.count("-") > 0)
   end
 
   private
+
+  def winner?
+    top_row_winner? || middle_row_winner? || bottom_row_winner?
+  end
 
   def top_row_winner?
     row = rows[0]
