@@ -21,7 +21,7 @@ class Board
   private
 
   def first_row_winner?
-    row = spaces.first(3)
+    row = rows.first
     row.count("-") == 0 && row.uniq.size == 1
   end
 
