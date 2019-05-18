@@ -37,8 +37,11 @@ class Board
     ]
   end
 
+  def lines
+    [rows, columns, diagonals].flatten(1)
+  end
+
   def winner?
-    lines = [rows, columns, diagonals].flatten(1)
     lines.any? { |line| winning_line?(line) }
   end
 
