@@ -44,16 +44,19 @@ class Board
   end
 
   def row_winner?(row)
-    row.count("-") == 0 && row.uniq.size == 1
+    winning_line?(row)
   end
 
   def col_winner?(col)
-    col.count("-") == 0 && col.uniq.size == 1
+    winning_line?(col)
+  end
+
+  def winning_line?(line)
+    line.count("-") == 0 && line.uniq.size == 1
   end
 
   def diagonal_winner?(diagonal)
-    (diagonal.count("-") == 0 && 
-      diagonal.uniq.size == 1) 
+    winning_line?(diagonal)
   end
 
 end
