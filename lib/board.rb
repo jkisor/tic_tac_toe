@@ -40,7 +40,7 @@ class Board
   def winner?
     rows.any? { |row| row_winner?(row) } ||
     columns.any? { |col|  col_winner?(col) } ||
-    diagonal_winner?(diagonals.first) || other_diagonal_winner?
+    diagonals.any? { |d| diagonal_winner?(d) }
   end
 
   def row_winner?(row)
