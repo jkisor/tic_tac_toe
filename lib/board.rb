@@ -56,11 +56,4 @@ class Board
       diagonal.uniq.size == 1) 
   end
 
-  def other_diagonal_winner?
-    diagonal_shapes = [ rows[0][2], rows[1][1], rows[2][0] ]
-
-    (diagonal_shapes.none? { |shape| shape == "-" } && 
-      diagonal_shapes.uniq.size == 1) 
-  end
-
 end
