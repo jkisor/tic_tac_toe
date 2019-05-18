@@ -42,10 +42,10 @@ class Board
   end
 
   def winner?
-    lines.any? { |line| winning_line?(line) }
+    lines.any? { |line| line_claimed?(line) }
   end
 
-  def winning_line?(line)
+  def line_claimed?(line)
     line.count("-") == 0 && line.uniq.size == 1
   end
 
