@@ -33,7 +33,7 @@ class Board
   def winner?
     rows.any? { |row| row_winner?(row) } ||
     columns.any? { |col|  col_winner?(col) } ||
-    diagonal_winner?
+    diagonal_winner? || other_diagonal_winner?
   end
 
   def row_winner?(row)
@@ -45,8 +45,17 @@ class Board
   end
 
   def diagonal_winner?
-    shapes = [ rows[0][0], rows[1][1], rows[2][2] ]
-    shapes.none? { |shape| shape == "-" } && shapes.uniq.size == 1
+    diagonal_shapes = [ rows[0][0], rows[1][1], rows[2][2] ]
+
+    (diagonal_shapes.none? { |shape| shape == "-" } && 
+      diagonal_shapes.uniq.size == 1) 
+  end
+
+  def other_diagonal_winner?
+    diagonal_shapes = [ rows[0][2], rows[1][1], rows[2][0] ]
+
+    (diagonal_shapes.none? { |shape| shape == "-" } && 
+      diagonal_shapes.uniq.size == 1) 
   end
 
 end

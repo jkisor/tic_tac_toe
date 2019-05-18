@@ -96,4 +96,12 @@ describe Board do
     end
   end
 
+  context "other diagonal taken by same shape" do
+    let(:data) { "--X-X-X--" }
+
+    it "is done" do
+      expect(subject).to be_done
+    end
+  end
+
 end
