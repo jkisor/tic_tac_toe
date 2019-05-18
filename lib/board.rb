@@ -38,25 +38,13 @@ class Board
   end
 
   def winner?
-    rows.any? { |row| row_winner?(row) } ||
-    columns.any? { |col|  col_winner?(col) } ||
-    diagonals.any? { |d| diagonal_winner?(d) }
-  end
-
-  def row_winner?(row)
-    winning_line?(row)
-  end
-
-  def col_winner?(col)
-    winning_line?(col)
+    rows.any? { |row| winning_line?(row) } ||
+    columns.any? { |col| winning_line?(col) } ||
+    diagonals.any? { |d| winning_line?(d) }
   end
 
   def winning_line?(line)
     line.count("-") == 0 && line.uniq.size == 1
-  end
-
-  def diagonal_winner?(diagonal)
-    winning_line?(diagonal)
   end
 
 end
