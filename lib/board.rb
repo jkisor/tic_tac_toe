@@ -20,6 +20,14 @@ class Board
 
   private
 
+  def winner?
+    lines.any? { |line| line_claimed?(line) }
+  end
+
+  def line_claimed?(line)
+    line.count("-") == 0 && line.uniq.size == 1
+  end
+
   def no_empty_spaces?
     !(spaces.count("-") > 0)
   end
@@ -39,14 +47,6 @@ class Board
 
   def lines
     [rows, columns, diagonals].flatten(1)
-  end
-
-  def winner?
-    lines.any? { |line| line_claimed?(line) }
-  end
-
-  def line_claimed?(line)
-    line.count("-") == 0 && line.uniq.size == 1
   end
 
 end
