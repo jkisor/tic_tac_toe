@@ -32,7 +32,8 @@ class Board
 
   def winner?
     rows.any? { |row| row_winner?(row) } ||
-    columns.any? { |col|  col_winner?(col) }
+    columns.any? { |col|  col_winner?(col) } ||
+    diagonal_winner?
   end
 
   def row_winner?(row)
@@ -41,6 +42,11 @@ class Board
 
   def col_winner?(col)
     col.count("-") == 0 && col.uniq.size == 1
+  end
+
+  def diagonal_winner?
+    shapes = [ rows[0][0], rows[1][1], rows[2][2] ]
+    shapes.none? { |shape| shape == "-" } && shapes.uniq.size == 1
   end
 
 end
