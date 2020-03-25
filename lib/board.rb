@@ -21,7 +21,11 @@ class Board
   private
 
   def winner?
-    lines.any? { |line| line_claimed?(line) }
+    claimed_lines.any?
+  end
+
+  def claimed_lines
+    lines.select { |line| line_claimed?(line) }
   end
 
   def line_claimed?(line)
