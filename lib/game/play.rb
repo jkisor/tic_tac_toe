@@ -4,8 +4,8 @@ module Game
 
     def self.build
       new(
-        :start_game => Start.build, 
-        :play_round => Loop.build, 
+        :start_game => Start.build,
+        :play_round => Loop.build,
         :end_game   => End.build
       )
     end
